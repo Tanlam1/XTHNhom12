@@ -1,5 +1,0 @@
-# ignore ALL .properties files
-*.properties
-
-# ignore ALL files in ANY directory named resources
-NHOM12Shop/src/main/resources/
