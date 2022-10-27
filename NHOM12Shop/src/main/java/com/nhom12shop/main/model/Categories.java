@@ -1,4 +1,4 @@
-package com.nhom12shop.main.dao;
+package com.nhom12shop.main.model;
 
 import java.io.Serializable;
 
@@ -22,22 +22,19 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Categories implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3874271647121882293L;
+    private static final long serialVersionUID = -3874271647121882293L;
 
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "name")
-	private String name;
-	
-	@Column(name = "slug")
-	private String slug;
-	
-	@Column(name = "isDeleted")
-	private Boolean isDeleted;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "slug")
+    private String slug;
+
+    @Column(name = "isDeleted")
+    private Boolean isDeleted;
 }

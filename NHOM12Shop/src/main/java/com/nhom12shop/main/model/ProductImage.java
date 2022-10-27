@@ -1,4 +1,4 @@
-package com.nhom12shop.main.dao;
+package com.nhom12shop.main.model;
 
 import java.io.Serializable;
 
@@ -26,21 +26,18 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ProductImage implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6217012820291392804L;
+    private static final long serialVersionUID = -6217012820291392804L;
 
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "imgName")
-	private String imgName;
-	
-	@ManyToOne
-	@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-	@JoinColumn(name = "productId", referencedColumnName = "id")
-	private Products product;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "imgName")
+    private String imgName;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
+    @JoinColumn(name = "productId", referencedColumnName = "id")
+    private Products product;
 }

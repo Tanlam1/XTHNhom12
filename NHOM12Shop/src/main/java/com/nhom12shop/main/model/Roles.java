@@ -1,4 +1,4 @@
-package com.nhom12shop.main.dao;
+package com.nhom12shop.main.model;
 
 import java.io.Serializable;
 
@@ -20,16 +20,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Roles implements Serializable {/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6447116339580687156L;
+public class Roles implements Serializable {
 
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name = "name")
-	private String name;
+    private static final long serialVersionUID = 6447116339580687156L;
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name")
+    private String name;
 }
