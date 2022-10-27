@@ -8,9 +8,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/")
 public class HomeController {
+<<<<<<< Updated upstream
 
     @GetMapping("")
     public String index() {
         return "index";
     }
+=======
+	
+	@GetMapping("") 
+	public String index() {
+		return "main";
+	}
+>>>>>>> Stashed changes
 }
