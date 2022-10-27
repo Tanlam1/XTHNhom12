@@ -1,7 +1,6 @@
-package com.nhom12shop.main.model;
+package com.nhom12shop.main.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CreationTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -22,35 +19,36 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "order_details")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Orders implements Serializable {
+public class OrderDetails implements Serializable {
 
-    private static final long serialVersionUID = 3198684361673567572L;
+    private static final long serialVersionUID = -2414027871579771997L;
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "price")
+    private Double price;
 
-    @Column(name = "phone")
-    private String phone;
-
-    @Column(name = "createdDate")
-    @CreationTimestamp
-    private Timestamp createdDate;
+    @Column(name = "quantity")
+    private Integer quantity;
 
     @Column(name = "statusOrder")
     private StatusOrders statusOrder;
 
     @ManyToOne
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-    @JoinColumn(name = "accountId", referencedColumnName = "id")
-    private Accounts account;
+    @JoinColumn(name = "orderId", referencedColumnName = "id")
+    private Orders order;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
+    @JoinColumn(name = "productId", referencedColumnName = "id")
+    private Products product;
 }

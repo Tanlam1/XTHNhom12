@@ -1,4 +1,4 @@
-package com.nhom12shop.main.model;
+package com.nhom12shop.main.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

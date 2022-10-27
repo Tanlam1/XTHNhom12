@@ -1,4 +1,4 @@
-package com.nhom12shop.main.model;
+package com.nhom12shop.main.entity;
 
 import java.io.Serializable;
 
@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "categories")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Roles implements Serializable {
+public class Categories implements Serializable {
 
-    private static final long serialVersionUID = 6447116339580687156L;
+    private static final long serialVersionUID = -3874271647121882293L;
 
     @Id
     @Column(name = "id")
@@ -31,4 +31,10 @@ public class Roles implements Serializable {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "slug")
+    private String slug;
+
+    @Column(name = "isDeleted")
+    private Boolean isDeleted;
 }

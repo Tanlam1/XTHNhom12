@@ -1,4 +1,4 @@
-package com.nhom12shop.main.model;
+package com.nhom12shop.main.entity;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductImage implements Serializable {
+public class ProductImages implements Serializable {
 
     private static final long serialVersionUID = -6217012820291392804L;
 

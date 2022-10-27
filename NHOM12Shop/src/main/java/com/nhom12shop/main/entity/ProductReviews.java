@@ -1,4 +1,4 @@
-package com.nhom12shop.main.model;
+package com.nhom12shop.main.entity;
 
 import java.io.Serializable;
 
@@ -19,33 +19,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "order_details")
+@Table(name = "product_reviews")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDetails implements Serializable {
+public class ProductReviews implements Serializable {
 
-    private static final long serialVersionUID = -2414027871579771997L;
+    private static final long serialVersionUID = 7502359862802116549L;
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "price")
-    private Double price;
-
-    @Column(name = "quantity")
-    private Integer quantity;
-
-    @Column(name = "statusOrder")
-    private StatusOrders statusOrder;
+    @Column(name = "description")
+    private String description;
 
     @ManyToOne
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-    @JoinColumn(name = "orderId", referencedColumnName = "id")
-    private Orders order;
+    @JoinColumn(name = "accountId", referencedColumnName = "id")
+    private Accounts account;
 
     @ManyToOne
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
