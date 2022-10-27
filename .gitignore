@@ -1,2 +1,5 @@
-# ignore application.properties file.
-application.properties
+# ignore ALL .properties files
+*.properties
+
+# ignore ALL files in ANY directory named resources
+resources/
