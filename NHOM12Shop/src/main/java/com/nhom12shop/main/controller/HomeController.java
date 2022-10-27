@@ -20,6 +20,7 @@ public class HomeController {
     @GetMapping({"", "/index"})
     public String doGetHome(Model model) {
         List<Categories> categories = categoriesService.findAll();
+        System.out.println(categories.size());
         model.addAttribute("categories", categories);
         return "index";
     }
