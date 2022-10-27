@@ -1,15 +1,26 @@
 package com.nhom12shop.main.controller;
 
+import com.nhom12shop.main.entity.Categories;
+import com.nhom12shop.main.service.CategoriesService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
 
+    @Autowired
+    private CategoriesService categoriesService;
+
     @GetMapping({"", "/index"})
-    public String doGetHome() {
+    public String doGetHome(Model model) {
+        List<Categories> categories = categoriesService.findAll();
+        model.addAttribute("categories", categories);
         return "index";
     }
 
