@@ -8,9 +8,51 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeController {
 
-
-    @GetMapping("")
-    public String index() {
+    @GetMapping({"", "/index"})
+    public String doGetHome() {
         return "index";
+    }
+
+    @GetMapping("shop-grid")
+    public String doGetShopGrid() {
+        return "shop-grid";
+    }
+
+    @GetMapping("shop-details")
+    public String doGetShopDetail() {
+        return "shop-details";
+    }
+
+    @GetMapping("shopping-cart")
+    public String doGetShoppingCart() {
+        return "shopping-cart";
+    }
+
+    @GetMapping("checkout")
+    public String doGetCheckout() {
+        return "checkout";
+    }
+
+    public String doGetBlogDetails() {
+        return "";
+    }
+
+    public String doGetBlog() {
+        return "";
+    }
+
+    @GetMapping("contact")
+    public String doGetContact() {
+        return "contact";
+    }
+
+    @GetMapping("login")
+    public String doGetLogin() {
+        return "login";
+    }
+
+    @GetMapping("register")
+    public String doGetRegister() {
+        return "register";
     }
 }
