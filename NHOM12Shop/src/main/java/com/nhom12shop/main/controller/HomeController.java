@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	
-	@GetMapping("") 
-	public String index() {
-		return "index";
-	}
+
+    @GetMapping("")
+    public String index() {
+        return "index";
+    }
 }
