@@ -2,4 +2,4 @@
 *.properties
 
 # ignore ALL files in ANY directory named resources
-resources/
+NHOM12Shop/src/main/resources/
