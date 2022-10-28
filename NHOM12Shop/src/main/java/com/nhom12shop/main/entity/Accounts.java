@@ -68,7 +68,7 @@ public class Accounts implements Serializable {
 
     @Column(name = "authProvider")
     private String authProvider;
-    
+
     @Column(name = "isDeleted")
     private Boolean isDeleted;
 
