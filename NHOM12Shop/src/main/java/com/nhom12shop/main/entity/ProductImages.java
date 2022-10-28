@@ -14,14 +14,12 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "product_images")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductImages implements Serializable {
@@ -38,6 +36,6 @@ public class ProductImages implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-    @JoinColumn(name = "productId", referencedColumnName = "id")
+    @JoinColumn(name = "pdimgId", referencedColumnName = "id")
     private Products product;
 }

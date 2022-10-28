@@ -19,14 +19,12 @@ import org.hibernate.annotations.CreationTimestamp;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "accounts")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Accounts implements Serializable {
@@ -68,11 +66,11 @@ public class Accounts implements Serializable {
     @Column(name = "isEnabled")
     private Boolean isEnabled;
 
-    @Column(name = "isDeleted")
-    private Boolean isDeleted;
-
     @Column(name = "authProvider")
     private String authProvider;
+    
+    @Column(name = "isDeleted")
+    private Boolean isDeleted;
 
     @ManyToOne
     @JoinColumn(name = "roleId", referencedColumnName = "id")

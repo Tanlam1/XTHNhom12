@@ -14,14 +14,12 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "product_reviews")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductReviews implements Serializable {
@@ -43,6 +41,6 @@ public class ProductReviews implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-    @JoinColumn(name = "productId", referencedColumnName = "id")
+    @JoinColumn(name = "pdreviewId", referencedColumnName = "id")
     private Products product;
 }
