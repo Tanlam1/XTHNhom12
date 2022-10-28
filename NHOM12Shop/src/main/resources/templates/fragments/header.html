@@ -162,7 +162,7 @@
                         </div>
                         <ul>
                             <th:block th:each="category : ${categories}">
-                            <li><a th:href="|'shop-grid/' + ${category.slug}|" th:text="|${category.name}|"></a></li>
+                            <li><a th:href="|shop-grid/ + ${category.slug}|" th:text="|${category.name}|"></a></li>
                             </th:block>
                         </ul>
                     </div>
