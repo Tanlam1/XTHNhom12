@@ -41,6 +41,6 @@ public class ProductReviews implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-    @JoinColumn(name = "pdreviewId", referencedColumnName = "id")
+    @JoinColumn(name = "productId", referencedColumnName = "id")
     private Products product;
 }
